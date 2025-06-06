@@ -1,0 +1,13 @@
+1) create virtualenvironment using virtualenv-it is mostly installed so just run "virtualenv <name of environment>"
+2) activate it by going to the activate folder of the virtual environment folder
+<name of virtuenvironment>\Scripts\activate---this is in windows
+in MAC OS, use source <name of virtual environment>/bin/activate
+3) create and make changes in all of the html, css, and js files as required
+4) store badger id in .env file(create both .env and .gitignore files)
+5) note: we have decised a method which helps read our badger id directly frorm the badger-config.js file
+and then we don't have to put it again even if we refresh
+BUT: we have to first manually put it by ourselves in a new browser which hasn't cookied out badger id
+so if we go and open idnex.html file in a new browser with a new chrome profile then for the first time
+we load index.html we have to manually enter the badger id into the text box and then 
+from the second time, we woon't havr to manually enter it in that same chrome profile for 
+that browser.

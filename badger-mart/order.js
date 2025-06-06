@@ -54,33 +54,56 @@ const SALES_TAX = {
 	WY:	0.040,
 }
 
+const ITEM_PRICES = {
+    apple: 0.75,
+    bagel: 0.50,
+    coconut: 2.50,
+    donut: 1.50,
+    egg: 1.00
+};
+
 function roundMoney(num) {
-	return Math.round(num * 100) / 100;
-}
-
-function calculateSubtotal() {
-	return 0.00; // TODO calculateSubtotal
-}
-
-function calculateSalesTax() {
-	return 0.00; // TODO calculateSalesTax
+    return Math.round(num * 100) / 100;
 }
 
 function getSalesTaxRateForState(state) {
-	return 0.00; // TODO getSalesTaxRateForState
+    const code = state.toUpperCase();
+    return SALES_TAX.hasOwnProperty(code) ? SALES_TAX[code] : 0.00;
+}
+
+function calculateSubtotal() {
+    let subtotal = 0.00;
+    for (const item of ITEMS) {
+        const qty = parseInt(document.getElementById(`${item}-quantity`).value) || 0;
+        const price = parseFloat(document.getElementById(`${item}-price`).textContent) || 0;
+        subtotal += qty * price;
+    }
+    return roundMoney(subtotal);
+}
+
+function calculateSalesTax() {
+    const state = document.getElementById("state-tax").value;
+    const subtotal = calculateSubtotal();
+    const rate = getSalesTaxRateForState(state);
+    return roundMoney(subtotal * rate);
 }
 
 document.getElementById("btn-what-is-my-sales-tax").addEventListener("click", () => {
-	const state = document.getElementById("state-tax").value;
-	alert("The sales tax rate for " + state + " is " + (getSalesTaxRateForState(state) * 100).toFixed(2) + "%");
-})
-
-document.getElementById("btn-subtotal").addEventListener("click", () => {
-	alert("Your subtotal is: $" + calculateSubtotal().toFixed(2));
+    const state = document.getElementById("state-tax").value;
+    alert("The sales tax rate for " + state + " is " + (getSalesTaxRateForState(state) * 100).toFixed(2) + "%");
 });
 
-document.getElementById("btn-sales-tax").addEventListener("click", () => {
-	alert("Your sales tax is: $" + calculateSalesTax().toFixed(2));
+document.getElementById("get-subtotal-btn").addEventListener("click", () => {
+    alert("Your subtotal is: $" + calculateSubtotal().toFixed(2));
 });
 
-// TODO Add an event listener to btn-checkout
+document.getElementById("get-tax-btn").addEventListener("click", () => {
+    alert("Your sales tax is: $" + calculateSalesTax().toFixed(2));
+});
+
+document.getElementById("checkout-button").addEventListener("click", () => {
+    const subtotal = calculateSubtotal();
+    const tax = calculateSalesTax();
+    const total = roundMoney(subtotal + tax);
+    alert("Your total bill is $" + total.toFixed(2));
+});

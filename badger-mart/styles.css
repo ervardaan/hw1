@@ -22,9 +22,30 @@ table, th, td {
 
 /* TODO: Add your primary and secondary styling below! */
 .primary-button {
-
+  background-color: #c5050c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.primary-button:hover {
+  background-color: #a40308;
 }
 
 .secondary-button {
-  
+  background-color: #fff;
+  color: #c5050c;
+  padding: 10px 20px;
+  border: 2px solid #c5050c;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.secondary-button:hover {
+  background-color: #f5f5f5;
+  color: #a40308;
 }

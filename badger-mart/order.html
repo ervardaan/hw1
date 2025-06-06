@@ -13,10 +13,12 @@
 			<img src="assets/banner.png" alt="Badger Mart Banner" height="200" width="600" />
 			<h1>Badger Mart</h1>
 			<nav>
-				<a href="index.html">Home</a>
-				<a href="about-us.html">About Us</a>
-				<a href="order.html">Order</a>
-				<a href="contact.html">Contact</a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="order.html">Order</a></li>
+					<li><a href="jobs.html">Jobs</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
 			</nav>
 		</header>
 		<main>
@@ -30,27 +32,27 @@
 				</tr>
 				<tr>
 					<td>Apples</td>
-					<td id="apple-price">0.75</td>
+					<td><span id="apple-price">0.75</span></td>
 					<td><input type="number" id="apple-quantity" value="0"></td>
 				</tr>
 				<tr>
 					<td>Bagels</td>
-					<td id="bagel-price">0.50</td>
+					<td><span id="bagel-price">0.50</span></td>
 					<td><input type="number" id="bagel-quantity" value="0"></td>
 				</tr>
 				<tr>
 					<td>Coconuts</td>
-					<td id="coconut-price">2.50</td>
+					<td><span id="coconut-price">2.50</span></td>
 					<td><input type="number" id="coconut-quantity" value="0"></td>
 				</tr>
 				<tr>
 					<td>Donuts</td>
-					<td id="donut-price">1.50</td>
+					<td><span id="donut-price">1.50</span></td>
 					<td><input type="number" id="donut-quantity" value="0"></td>
 				</tr>
 				<tr>
 					<td>Eggs</td>
-					<td id="egg-price">1.00</td>
+					<td><span id="egg-price">1.00</span></td>
 					<td><input type="number" id="egg-quantity" value="0"></td>
 				</tr>
 			</table>
@@ -58,7 +60,6 @@
 			<br>
 
 			<div style="display: inline-flex;">
-				<!-- Is there a better way to do this? Yes! React will be helpful here. -->
 				<label for="state-tax"><strong>Select Your State:</strong></label>
 				<select id="state-tax">
 					<option value="AL">AL</option>
@@ -119,9 +120,9 @@
 			<br>
 			<br>
 
-			<button id="btn-subtotal" class="secondary-button">Get Subtotal</button>
-			<button id="btn-sales-tax" class="secondary-button">Get Sales Tax</button>
-			<button id="btn-checkout" class="primary-button">Checkout</button>
+			<button id="get-subtotal-btn" class="secondary-button">Get Subtotal</button>
+			<button id="get-tax-btn" class="secondary-button">Get Sales Tax</button>
+			<button id="checkout-button" class="primary-button">Checkout</button>
 		</main>
 	</body>
 </html>

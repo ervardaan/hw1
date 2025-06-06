@@ -3,6 +3,10 @@
 // See Step 0 for using your Badger ID to get today's feature,
 // there is no code for you to do beyond here!
 
+document.addEventListener("DOMContentLoaded", () => {
+    alert("Your Badger Auth ID is: " + BADGER_AUTH_ID);
+});
+
 fetch("https://cs571api.cs.wisc.edu/rest/s25/hw1/featured-sale-item", {
 	headers: {
 		"X-CS571-ID": CS571.getBadgerId()

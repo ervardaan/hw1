@@ -14,16 +14,18 @@
 			<img src="assets/banner.png" alt="Badger Mart Banner" height="200" width="600" />
 			<h1>Badger Mart</h1>
 			<nav>
-				<a href="index.html">Home</a>
-				<a href="about-us.html">About Us</a>
-				<a href="order.html">Order</a>
-				<a href="contact.html">Contact</a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="order.html">Order</a></li>
+					<li><a href="jobs.html">Jobs</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
 			</nav>
 		</header>
 		<main>
 			<h2>Help Wanted!</h2>
 			<p>We are currently in need of the following positions...</p>
-			<form onsubmit="submitApplication(event)">
+			<form id="jobs-form">
 				<div class="job-option">
 					<input type="radio" id="cashier" name="job" value="Cashier">
 					<label for="cashier" class="job-description">
@@ -48,8 +50,7 @@
 					</label>
 				</div>
 
-				<!-- TODO: Make this appear as a 'primary' button -->
-				<input type="submit" value="Apply">
+				<input type="submit" value="Apply" class="primary-button" id="apply-button">
 			</form>
 		</main>
 	</body>
