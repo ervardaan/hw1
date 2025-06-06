@@ -11,3 +11,5 @@ so if we go and open idnex.html file in a new browser with a new chrome profile 
 we load index.html we have to manually enter the badger id into the text box and then 
 from the second time, we woon't havr to manually enter it in that same chrome profile for 
 that browser.
+6) install dependencies in a virtual environment using pip but first activate the virtual environment and then install dependencies using pip
+pip install -r requirements.txt
